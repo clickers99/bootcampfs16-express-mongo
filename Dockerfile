@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV MONGO_URI="mongodb://mongodb:27017"
+ENV MONGO_URI="mongodb+srv://clickers99:TR2UndbEzuKefRCN@devscaleid.qwiondc.mongodb.net/?retryWrites=true&w=majority&appName=DevscaleID"
 
 EXPOSE 8000
 
