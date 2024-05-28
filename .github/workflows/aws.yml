@@ -32,10 +32,10 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG .
           docker push $ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          echo "image=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG" >> $GITHUB_ENV
 
     outputs:
-      image: ${{ steps.build-image.outputs.image }}
+      image: ${{ env.image }}
 
   deploy_to_ecs:
     name: Deploy to Amazon ECS
